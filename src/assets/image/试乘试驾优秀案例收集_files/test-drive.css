@@ -1,0 +1,200 @@
+.test-drive {
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 20px 40px;
+  background: #121430;
+  font-size: 0.85333rem;
+  color: #A1A3CF; }
+  .test-drive .logo {
+    text-align: center; }
+    .test-drive .logo img {
+      width: 7.84rem;
+      height: 5.33333rem; }
+  .test-drive .tit {
+    padding-bottom: 14px;
+    border-bottom: 2px solid #3D5AFE;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 0.96rem;
+    color: #D5D4D4; }
+  .test-drive .tip {
+    margin-top: 14px;
+    text-align: justify;
+    line-height: 1.5;
+    color: #A1A3CF; }
+  .test-drive .border {
+    border-bottom: 1px solid #3D5AFE; }
+  .test-drive .dealer {
+    margin-top: 0.53333rem;
+    padding: 0.66667rem 0;
+    line-height: 1.5; }
+  .test-drive .item-tit {
+    margin-top: 1.06667rem;
+    font-size: 0.85333rem;
+    color: #fff; }
+  .test-drive .item-css {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-left: 2.34667rem; }
+    .test-drive .item-css label {
+      font-size: 0.8rem; }
+  .test-drive .route {
+    padding-top: 1.06667rem;
+    background: url("../img/maserati-pen.png") no-repeat left center;
+    background-size: 2.08rem 1.81333rem;
+    line-height: 1.5; }
+  .test-drive .mile {
+    padding-top: 1.33333rem;
+    background: url("../img/maserati-mile.png") no-repeat left 0.53333rem;
+    background-size: 2.34667rem 2.08rem; }
+  .test-drive .time {
+    padding-top: 1.33333rem;
+    background: url("../img/maserati-clock.png") no-repeat left 0.53333rem;
+    background-size: 2.34667rem 2.08rem; }
+  .test-drive .lamp {
+    padding-top: 1.06667rem;
+    background: url("../img/maserati-lamp.png") no-repeat left 0.53333rem;
+    background-size: 2.34667rem 2.02667rem; }
+  .test-drive .book, .test-drive .brand {
+    background: url("../img/maserati-book.png") no-repeat left center;
+    background-size: 2rem 1.92rem;
+    border: none;
+    line-height: 1.5;
+    font-size: 0.8rem; }
+  .test-drive .book {
+    padding: 1.06667rem 0 0.53333rem 2.34667rem; }
+  .test-drive .brand {
+    margin: 0.53333rem 0;
+    padding: 0.66667rem 0 0.53333rem 2.34667rem; }
+  .test-drive .img {
+    padding-top: 0.8rem;
+    background: url("../img/maserati-img.png") no-repeat left 0.93333rem;
+    background-size: 1.78667rem 2.08rem; }
+    .test-drive .img label {
+      line-height: 1.5; }
+  .test-drive .man {
+    line-height: 4rem;
+    background: url("../img/maserati-man.png") no-repeat left center;
+    background-size: 2rem 1.86667rem; }
+  .test-drive .loop {
+    line-height: 4rem;
+    background: url("../img/maserati-loop.png") no-repeat left center;
+    background-size: 2rem 1.89333rem; }
+  .test-drive input {
+    margin: 0.26667rem 0 0;
+    padding: 0;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    background: transparent;
+    border: none;
+    font-size: 0.74667rem; }
+  .test-drive .lamp div {
+    min-height: 1.6rem;
+    margin: 0.26667rem 0 0;
+    padding: 0.13333rem 0 0.53333rem;
+    line-height: 1.5;
+    background: transparent;
+    border: none;
+    font-size: 0.74667rem; }
+  .test-drive .textarea {
+    border: none; }
+  .test-drive textarea {
+    width: 100%;
+    height: 5.33333rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0.53333rem;
+    background: transparent;
+    border: 1px solid #3D5AFE;
+    border-radius: 5px;
+    line-height: 1.5;
+    font-size: 0.74667rem; }
+  .test-drive .commit {
+    display: block;
+    width: 100%;
+    height: 2.66667rem;
+    margin: 2rem auto 0;
+    line-height: 2.66667rem;
+    text-align: center;
+    border: 1px solid #3D5AFE;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 0.53333rem; }
+  .test-drive .man, .test-drive .loop {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+            align-items: center; }
+    .test-drive .man .mui-switch, .test-drive .loop .mui-switch {
+      width: 2.66667rem;
+      height: 0.66667rem; }
+      .test-drive .man .mui-switch .mui-switch-handle, .test-drive .loop .mui-switch .mui-switch-handle {
+        height: 1.06667rem;
+        width: 1.06667rem;
+        margin-top: -0.26667rem; }
+      .test-drive .man .mui-switch .mui-active, .test-drive .loop .mui-switch .mui-active {
+        background: #3d5afe; }
+
+.mask {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 2.13333rem;
+  background: rgba(0, 0, 0, 0.5); }
+  .mask .mask-tit {
+    font-size: 0.85333rem;
+    margin: 0.4rem 0; }
+  .mask .content {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 1.33333rem 0.53333rem;
+    margin-top: 4rem;
+    background: #FFF;
+    border-radius: 0.26667rem;
+    color: #333; }
+    .mask .content ul {
+      display: -webkit-box;
+      display: flex;
+      flex-wrap: wrap; }
+      .mask .content ul li {
+        margin: 0.53333rem;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding-left: 1.06667rem;
+        position: relative;
+        font-size: 0.8rem; }
+        .mask .content ul li:before {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 0.8rem;
+          height: 0.8rem;
+          margin-top: -0.33333rem;
+          border: 1px solid #3D5AFE;
+          border-radius: 50%;
+          content: ''; }
+      .mask .content ul .active:before {
+        background: #3D5AFE; }
+    .mask .content a {
+      display: block;
+      width: 60%;
+      height: 2.4rem;
+      margin: 1.33333rem auto 0;
+      border: 1px solid #3D5AFE;
+      border-radius: 0.13333rem;
+      text-align: center;
+      line-height: 2.4rem;
+      font-size: 0.8rem; }
+
+.mui-toast-container {
+  top: 100px;
+  bottom: 0; }

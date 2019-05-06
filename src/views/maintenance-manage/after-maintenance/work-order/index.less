@@ -1,0 +1,105 @@
+.work-detail {
+    .header {
+        background: #fff;
+        border-radius: 4px;
+        ul {
+            box-sizing: border-box;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .ant-select, input {
+                width: 160px;
+                margin-left: 10px;
+            }
+            &:first-child {
+                border-bottom: 1px solid #d9d9d9;
+                span {
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #333;
+                }
+            }
+        }
+    }
+    .custom-vehicle {
+        box-sizing: border-box;
+        margin-top: 20px;
+        .custom {
+            background: #fff;
+            border-radius: 4px;
+            .plates {
+                display: flex;
+                box-sizing: border-box;
+                padding: 5px 15px;
+                background: #1890ff;
+                border-radius: 4px 4px 0 0;
+                justify-content: space-between;
+                align-items: center;
+                span, a {
+                    color: #fff;
+                }
+            }
+            .cust {
+                display: flex;
+                box-sizing: border-box;
+                padding: 15px;
+                border-bottom: 1px solid #d9d9d9;
+                justify-content: flex-start;
+                align-items: center;
+                .avator {
+                    width: 60px;
+                    height: 60px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .detail-info {
+                    margin-left: 15px;
+                    .cust-info, .card-info {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .cust-info label {
+                        margin-right: 15px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #333;
+                    }
+                    .card-info div:nth-child(1) {
+                        margin-right: 15px;
+                    }
+                }
+            }
+            ul {
+                box-sizing: border-box;
+                padding: 5px 15px;
+                li {
+                    padding: 5px 0;
+                }
+            }
+        }
+        .vehicle {
+            box-sizing: border-box;
+            padding: 0 15px;
+            .ant-tabs {
+                background: #fff;
+                ul {
+                    display: inline-block;
+                    box-sizing: border-box;
+                    padding-left: 15px;
+                    padding-bottom: 15px;
+                    li {
+                        padding: 5px 0;
+                    }
+                }
+                .vehicle-info ul {
+                    width: 50%;
+                }
+                .cust-info ul {
+                    width: 33.33%
+                }
+            }
+        }
+    }
+}

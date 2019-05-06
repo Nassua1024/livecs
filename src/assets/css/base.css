@@ -1,0 +1,98 @@
+
+#root, #root >div {
+    height: 100%;
+}
+
+.ant-card-head {
+    min-height: 30px;
+    padding: 0 24px;
+    background: #edf1f7;
+}
+
+.ant-card-head-title {
+    padding: 10px 0;
+}
+
+.table {
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+}  
+
+.ant-table-wrapper {
+    overflow: auto;
+}
+
+.ant-table-thead > tr > th {
+    background: #edf1f7;
+}
+
+.ant-table td, .ant-table th { 
+    white-space: nowrap; 
+}
+
+.ant-table-empty .ant-table-body {
+    overflow: hidden !important;
+}
+
+.ant-table-placeholder {
+    border-radius: 0;
+}
+
+.ant-table-pagination.ant-pagination {
+    margin-bottom: 0;
+}
+
+.ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+    background: #edf1f7;
+}
+
+.ant-input-disabled, .ant-select-disabled .ant-select-selection {
+    cursor: text !important;
+}
+
+.b-green, .b-green:active {
+    background: #5eb870 !important;
+    border-color: #5eb870 !important;
+    color: #fff !important;
+}
+
+.b-green:hover {
+    background: #63c576 !important;
+    border-color: #63c576 !important;
+    color: #fff !important;
+}
+
+.b-orange, .b-orange:active {
+    background: #ff9a00 !important;
+    border-color: #ff9a00 !important;
+    color: #fff !important;
+}
+
+.b-orange:hover {
+    background: #f9c855 !important;
+    border-color: #f9c855 !important;
+    color: #fff !important;
+}
+
+.ant-select-disabled, .ant-input-disabled {
+    color: rgba(0, 0, 0, .65);
+}
+
+.query .ant-col-6 {
+    margin-bottom: 20px;
+}
+
+.query input, .query .ant-select {
+    width: 160px;
+}
+
+.query label {
+    display: inline-block;
+    width: 100px;
+    box-sizing: border-box;
+    padding-right: 10px;
+    text-align: right;
+}

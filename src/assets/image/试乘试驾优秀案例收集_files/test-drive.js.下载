@@ -1,0 +1,167 @@
+
+$(function() {
+ 
+    var baseUrl = 'http://maserati.jinznet.com/maserati'
+    var supplerList = [] // 经销商列表
+    var dealerCode = ''
+    var experiencePoint = ''
+    var imgUrl = ''
+
+    if (sessionStorage.getItem('carInfo')) {
+        var carInfo = JSON.parse(sessionStorage.getItem('carInfo'))
+        $('.dealer').text(carInfo.dealerName)
+        $('.route input').val(carInfo.routeName)
+        $('.mile input').val(carInfo.routeMileage)
+        $('.time input').val(carInfo.routeDuration)
+        $('.book-text').val(carInfo.disc)
+        $('.brand-text').val(carInfo.brandDisc)
+        $('.lamp div').text(carInfo.experiencePoint)
+        dealerCode = carInfo.dealerCode
+        experiencePoint = carInfo.experiencePoint
+        carInfo.haveTestDriver && $('#man').addClass('mui-active')
+        carInfo.twoTestDriver && $('#loop').addClass('mui-active')
+
+        var experiencePointList = experiencePoint.split(',')
+        for (var i=0; i<experiencePointList.length; i++) {
+            for (var j=0; j<$('.mask li').length; j++) {
+                if (experiencePointList[i] == $('.mask li').eq(j).text()) {
+                    $('.mask li').eq(j).addClass('active')
+                }
+            }
+        }
+    }
+
+    if (sessionStorage.getItem('url')) {
+        var url = sessionStorage.getItem('url')
+        var len = url.split(',').length
+        $('.img input').val('已上传'+len+'张')
+        imgUrl = url
+    }
+
+    // 初始化经销商列表
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: baseUrl + '/dicInfo/getDicInfo',
+        contentType: 'application/json',
+        data: '{}',
+        success: function(res) {
+            var list = res.data || []
+            supplerList = list.map(function(item) {
+                return { text: item.refName, value: item.refCode }
+            })
+        }
+    })
+
+    // 选择经销商
+    $('.dealer').click(function() {
+        var picker = new mui.PopPicker()
+        picker.setData(supplerList)
+        picker.show(function (selectItems) {
+            dealerCode = selectItems[0].value
+            $('.dealer').text(selectItems[0].text)
+        })
+    })
+
+    // 显示产品性能弹窗
+    $('.lamp').click(function() {
+        $('.mask').show()
+    })
+
+    // 选择产品性能
+    $('.mask li').click(function() {
+        $(this).toggleClass('active')
+    })
+
+    // 确定产品性能
+    $('.mask a').click(function() {
+        var list = $('.mask li')
+        experiencePoint = ''
+        for (var i=0; i<list.length; i++) {
+            if (list[i].classList.contains('active')) {
+                var str = list[i].innerHTML
+                if (i == 6) str = 'B\&W音响'
+                experiencePoint += str + ','
+            }
+        }
+        $('.lamp div').text(experiencePoint)
+        $('.mask').hide()
+    })
+
+    $('.img').click(function() {
+        
+        var params = {
+            dealerCode: dealerCode,
+            dealerName: $('.dealer').text(),
+            routeName: $('.route input').val(),
+            routeMileage:  $('.mile input').val(),
+            routeDuration: $('.time input').val(),
+            experiencePoint: experiencePoint,
+            disc: $('.book-text').val(),
+            brandDisc: $('.brand-text').val(),
+            haveTestDriver: document.getElementById('man').classList.contains("mui-active") ? '1' : '0',
+            twoTestDriver: document.getElementById('loop').classList.contains("mui-active") ? '1' : '0',
+        }
+
+        sessionStorage.setItem('carInfo', JSON.stringify(params))
+
+        if (!dealerCode) {
+            mui.toast('请先选择经销商') 
+            return
+        }
+        window.location.href = 'http://maserati.jinznet.com/maserati/trainingReport/upload?id='+dealerCode+'&status=0'
+    })
+
+    // 提交
+    $('.commit').click(function() {
+        
+        var params = {
+            dealerCode: dealerCode,
+            dealerName: $('.dealer').text(),
+            routeName: $('.route input').val(),
+            routeMileage:  $('.mile input').val(),
+            routeDuration: $('.time input').val(),
+            experiencePoint: experiencePoint,
+            disc: $('textarea').val(),
+            brandDisc: $('.brand-text').val(),
+            haveTestDriver: document.getElementById('man').classList.contains("mui-active") ? '1' : '0',
+            twoTestDriver: document.getElementById('loop').classList.contains("mui-active") ? '1' : '0',
+            imgUrl: imgUrl,
+        }
+
+        var fields = [
+            'dealerCode', 
+            'routeName', 
+            'routeMileage', 
+            'routeDuration', 
+            'experiencePoint',
+            'disc',
+            'brandDisc',
+            'haveTestDriver',
+            'twoTestDriver',
+            'imgUrl'
+        ]
+
+        for (var i=0; i<fields.length; i++) {
+            if (!params[fields[i]]) {
+                mui.toast('请填写完整信息') 
+                return
+            }
+        }
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'JSON',
+            url: baseUrl + '/testdriver/insert',
+            contentType: 'application/json',
+            data: JSON.stringify(params),
+            success: function(res) {
+                var success = res && JSON.parse(res).isSuccess
+                if (success) {
+                    sessionStorage.clear()
+                    mui.alert('提交成功', '确定')
+                }
+            }
+        })
+    })
+})
